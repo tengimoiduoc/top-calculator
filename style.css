@@ -1,90 +1,103 @@
+/* Resetting default box model and margins */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Body styles */
 body {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
+  background: aqua;
   color: #fff;
   font-family: sans-serif;
 }
 
+/* Calculator container styles */
 .container {
   width: 300px;
   height: 400px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 36px;
+  justify-content: space-between; /* Ensure even spacing */
+  align-items: center;
+  gap: 16px;
+  padding: 36px; /* Added padding for better spacing */
   border: 2px solid gray;
   border-radius: 15px;
-  background-color: #cccccc;
+  background-color: aquamarine;
 }
 
+/* Display box styles */
 .display-box {
-  width: 75%;
+  width: 100%; /* Ensure full width */
   padding: 8px;
   border: 1px solid gray;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end; /* Align text to the right */
+  color: #000;
+  background-color: #fff; /* Make the display background white */
 }
 
-.display-box:hover {
-  background-color: #707070;
-}
-
+/* Answer display */
 .show-answer {
   font-size: 12px;
 }
 
+/* Current operation display */
 .operation {
-  font-size: 18px;
+  font-size: 24px; /* Increased font size for readability */
+  font-weight: bold; /* Highlight the current operation */
 }
 
+/* Keypad grid layout */
 .key-box {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 16px;
+  gap: 10px;
+  width: 100%;
 }
 
+/* Key button styles */
 .key {
-  padding: 8px 16px;
-  background-color: #332d27;
+  padding: 11px; /* Increased padding for larger buttons */
+  background-color: #800080;
   border-radius: 5px;
   cursor: pointer;
   color: #fff;
-  transition: backgroundColor 3s;
   border: 1px solid grey;
+  transition: background-color 0.3s; /* Fixed typo, shortened transition */
+  font-size: 16px; /* Larger text for better readability */
 }
 
+/* Hover and active states */
 .key:hover {
-  background-color: #4c443a;
+  background-color: #8d1a8d;
 }
 
 .key:active {
-  background-color: #665b4e;
+  background-color: #993399;
   border: 1px solid #fff;
 }
 
+/* Special button style (e.g. for "=") */
 .background-white {
   background-color: #fff;
   color: #000;
+  transition: background-color 0.3s;
 }
 
 .background-white:hover {
   background-color: #e6e6e6;
 }
 
-.background-white {
+.background-white:active {
   background-color: #cccccc;
 }
